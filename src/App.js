@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import background from "./img/CR7-LM.jpg";
 
 function App() {
   const [vote, setVote] = useState(0);
@@ -16,6 +17,7 @@ function App() {
   }
   return (
     <div className="App">
+      <img src={background}></img>
       <header className="App-header">
         <h1>Who is the true G.O.A.T...?</h1>
       </header>
