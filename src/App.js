@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [vote, setVote] = useState(0);
+  const [ronny, setRonny] = useState(0);
+  const [messi, setMessi] = useState(0);
+  function clicky() {
+    console.log("clicked", vote);
+    setMessi(messi + 1);
+    setVote(vote + 1);
+  }
+  function Ronny() {
+    setRonny(ronny + 1);
+    setVote(vote + 1);
+  }
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Who is the true G.O.A.T...?</h1>
       </header>
+      <div className="player-votes">
+        <h1>Messi: {messi}</h1>
+        <h1>Ronaldo: {ronny}</h1>
+      </div>
+      <h2>Total Votes: {vote}</h2>
+      <div className="">
+        <h2>Messi</h2>
+        <button onClick={clicky}>G.O.A.T.</button>
+        <h2>Ronaldo</h2>
+        <button onClick={Ronny}>G.O.A.T.</button>
+      </div>
     </div>
   );
 }
